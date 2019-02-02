@@ -23,9 +23,9 @@ public class UserListener {
     public void onTenantEvent(Message<Payload> message) {
 
         Payload event = message.getPayload();
-        ChatUserDto user = event.getSendObject();
+        ChatUserDto user = event.getChatUserDto();
         switch (event.getEvent()) {
-            case "INSERT":
+            case "CREATE":
                 userService.insert(user);
                 break;
             default:

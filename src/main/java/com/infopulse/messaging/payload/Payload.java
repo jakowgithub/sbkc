@@ -11,6 +11,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class Payload {
-    private ChatUserDto sendObject;
+    private ChatUserDto chatUserDto;
     private String event;
 }
