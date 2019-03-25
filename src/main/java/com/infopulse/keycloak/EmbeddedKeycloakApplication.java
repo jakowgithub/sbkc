@@ -55,8 +55,7 @@ public class EmbeddedKeycloakApplication extends KeycloakApplication {
         InvocationHandler invocationHandler = (proxy, method, args) -> {
 
             if ("getContextPath".equals(method.getName())) {
-                return keycloakServerProperties.getContextPath();
-            }
+                return keycloakServerProperties.getContextPath(); }
 
             if ("getInitParameter".equals(method.getName()) && args.length == 1 && "keycloak.embedded".equals(args[0])) {
                 return "true";

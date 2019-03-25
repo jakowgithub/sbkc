@@ -18,7 +18,8 @@ import javax.sql.DataSource;
 @Configuration
 public class KeycloakConfig {
     @Bean
-    ServletRegistrationBean keycloakJaxRsApplication(KeycloakServerProperties keycloakServerProperties, DataSource dataSource) throws Exception {
+    ServletRegistrationBean keycloakJaxRsApplication(KeycloakServerProperties keycloakServerProperties,
+                                                     DataSource dataSource) throws Exception {
 
         mockJndiEnvironment(dataSource);
 

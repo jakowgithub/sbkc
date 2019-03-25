@@ -14,19 +14,22 @@ import org.springframework.context.annotation.Bean;
 @EnableConfigurationProperties(KeycloakServerProperties.class)
 public class KeycloakStarter {
     public static void main(String[] args) {
+
         SpringApplication.run(KeycloakStarter.class, args);
     }
 
     @Bean
-    ApplicationListener<ApplicationReadyEvent> onApplicationReadyEventListener(ServerProperties serverProperties, KeycloakServerProperties keycloakServerProperties) {
+    ApplicationListener<ApplicationReadyEvent> onApplicationReadyEventListener(
+            ServerProperties serverProperties,
+            KeycloakServerProperties keycloakServerProperties) {
 
         return (evt) -> {
 
             Integer port = serverProperties.getPort();
             String rootContextPath = serverProperties.getServlet().getContextPath();
-            if(rootContextPath == null){
-                rootContextPath ="";
-            }
+
+            if(rootContextPath == null){ rootContextPath =""; }
+
             String keycloakContextPath = keycloakServerProperties.getContextPath();
 
             System.out.printf("Embedded Keycloak started: http://localhost:%s%s%s to use keycloak%n", port, rootContextPath, keycloakContextPath);

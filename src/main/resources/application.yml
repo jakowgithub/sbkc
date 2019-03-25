@@ -1,7 +1,7 @@
 spring:
   datasource:
-    username: postgres
-    password: Tsunami9
+    username: jakow
+    password: pass1
     driverClassName: org.postgresql.Driver
     driverDialect: org.hibernate.dialect.PostgreSQL82Dialect
     url: jdbc:postgresql://localhost/keycloakbroker
@@ -41,4 +41,5 @@ keycloak:
     contextPath: /auth
     adminUser:
       username: admin
-      password: admin
+      password: GPCw4Yn9Hwz9Fyw
+

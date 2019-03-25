@@ -25,6 +25,7 @@ public class KeycloakServerProperties {
         this.adminUser = adminUser;
     }
 
+
     public static class AdminUser {
 
         String username;
